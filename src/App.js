@@ -1,13 +1,20 @@
+import React from "react";
 import "./App.css";
-import store from './store/index'
+import { connect } from "react-redux";
+import Count from "./components/Count";
 
-function App() {
+function App({ count }) {
   return (
     <div className="App">
       <h1>Redux Learn</h1>
-      <p>Count:{store.getState().count}</p>
+      <p>Count: {count}</p>
+      <Count />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { count: state.count };
+};
+
+export default connect(mapStateToProps)(App);

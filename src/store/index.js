@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 const initialState = {
-  count: 1,
+  count:333,
 };
 
 const reducer = (state = initialState) => {
